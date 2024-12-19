@@ -1,0 +1,319 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: url('https://img.freepik.com/free-vector/flat-background-world-autism-awareness-day_23-2151263487.jpg?semt=ais_hybrid') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  #game-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: transparent;
+    padding: 20px;
+    border-radius: 20px;
+    border: 5px solid #ffcc00;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  h1 {
+    color: #ff5733;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px #f0e68c;
+    margin-bottom: 20px;
+  }
+
+
+
+  #popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(145deg, #ffcc99, #ff9966);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 1.5rem;
+    animation: pop-in 0.5s ease-in-out;
+    z-index: 9999;
+  }
+  
+  @keyframes pop-in {
+    from {
+      transform: translate(-50%, -50%) scale(0);
+    }
+    to {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  /* Retry button styling */
+  #retry-button {
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  
+  #retry-button:hover {
+    background-color: #357ab8;
+    transform: scale(1.1);
+  }
+  /* General styles */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: url('https://img.freepik.com/free-vector/flat-background-world-autism-awareness-day_23-2151263487.jpg?semt=ais_hybrid') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    animation: background-animation 20s infinite alternate ease-in-out;
+    position: relative;
+    overflow-x: hidden;
+}
+
+@keyframes background-animation {
+    0% {
+        background-size: 100%;
+        background-position: center;
+    }
+    50% {
+        background-size: 105%;
+        background-position: top;
+    }
+    100% {
+        background-size: 110%;
+        background-position: bottom;
+    }
+}
+
+#game-container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: transparent; /* Make the container background transparent */
+    padding: 20px;
+    border-radius: 20px; /* Keep the rounded corners for styling */
+    border: none; /* Remove the border */
+    box-shadow: none; /* Remove the shadow for a fully transparent look */
+}
+
+h1 {
+    color: #ff5733; /* Keep the text color for visibility */
+    font-size: 2.5rem;
+    text-shadow: 2px 2px #f0e68c; /* Optional: Add shadow to make text stand out */
+    margin-bottom: 20px;
+}
+
+.piece:hover {
+    transform: scale(1.1); /* Optional: Visual effect on hover */
+}
+
+.grid-cell {
+    width: 100px; /* Match the size of .piece */
+    height: 100px; /* Match the size of .piece */
+    border: 1px dashed #ffcc00;
+    background-color: #ffe5d1;
+    border-radius: 4px;
+    box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.1);
+    display: flex; /* Make the cell a flex container */
+    align-items: center; /* Center the piece vertically */
+    justify-content: center; /* Center the piece horizontally */
+    overflow: hidden; /* Prevent any content overflow */
+}
+
+.hidden {
+    display: none;
+}
+#puzzle-frame {
+    display: flex;
+    flex-direction: row; /* Align items horizontally */
+    align-items: center; /* Vertically center-align items */
+    justify-content: space-around; /* Distribute space evenly */
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    gap: 20px; /* Add consistent spacing between items */
+}
+
+#hint-container {
+    display: flex;
+    flex-direction: column; /* Arrange hint image and text vertically */
+    align-items: center; /* Center-align items */
+    text-align: center; /* Center-align text */
+}
+
+#hint-image {
+    width: 80px;
+    height: auto;
+    border: 3px solid #ffcc00;
+    border-radius: 5px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 5px; /* Add spacing below the image */
+}
+
+#puzzle-grid {
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    border: 4px solid #ffcc00;
+    background-color: #fffcf2;
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+.piece {
+  width: 100px; /* Keep each piece 100px */
+  height: 100px; /* Keep each piece 100px */
+  border: 2px solid #4a90e2;
+  border-radius: 8px;
+  background-size: 400px 400px; /* Ensure image is scaled properly */
+  cursor: grab;
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease-in-out;
+  object-fit: cover; /* Ensure the image fits well inside the piece */
+}
+#pieces-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of pieces into the next row */
+  justify-content: flex-start; /* Align pieces to the left */
+  align-items: flex-start; /* Align pieces to the top */
+  width: 100%; /* Make sure container uses full available width */
+  max-width: 330px; /* 3 pieces of 100px + 2 * 10px (margin), total width 330px */
+  height: 330px; /* Adjust height to fit pieces */
+  background: transparent;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Allow vertical scrolling if needed */
+  gap: 5px; /* Adjust the vertical and horizontal gaps */
+}
+/* Quiz container */
+#quiz-container {
+  max-width: 900px;
+  margin: 20px auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  animation: fade-in 1s ease-in-out;
+}
+
+/* Quiz title */
+#quiz-title {
+  color: #ff5733;
+  font-size: 2rem;
+  text-shadow: 1px 1px #f0e68c;
+  margin-bottom: 15px;
+}
+
+/* Quiz question */
+#quiz-question {
+  color: #4a90e2;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Quiz options */
+#quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Individual answer buttons */
+#quiz-options .answer {
+  background-color: #ffcc00;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 80%; /* Make buttons uniform in width */
+  max-width: 300px;
+}
+
+#quiz-options .answer:hover {
+  background-color: #f0ad4e;
+  transform: scale(1.05);
+}
+
+/* Quiz feedback popup */
+#quiz-popup {
+  background: linear-gradient(145deg, #ff9966, #ffcc99);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+  display: none;
+}
+
+/* Feedback text */
+#quiz-feedback {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Buttons in quiz popup */
+#unlock-button,
+#quiz-retry-button {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+#unlock-button:hover,
+#quiz-retry-button:hover {
+  background-color: #357ab8;
+  transform: scale(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animation for quiz container fade-in */
+@keyframes fade-in {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}.hidden {
+  display: none;
+}
+
+#puzzle-section, #quiz-section {
+  transition: opacity 0.5s ease-in-out;
+}
+
+#puzzle-section.hidden, #quiz-section.hidden {
+  opacity: 0;
+}
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jigsaw Puzzle Game with Quiz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="game-container">
+    <h1>Jigsaw Puzzle Game</h1>
+    <div id="puzzle-frame">
+      <div id="hint-container">
+        <img id="hint-image" src="" alt="Hint">
+        <p>Hint</p>
+      </div>
+      <div id="puzzle-grid"></div>
+      <div id="pieces-container"></div>
+    </div>
+    <button id="retry-button">Retry</button>
+  </div>
+
+  <!-- Quiz Container -->
+  <div id="quiz-container" class="hidden">
+    <h1 id="quiz-title">Quiz Time!</h1>
+    <p id="quiz-question"></p>
+    <div id="quiz-options"></div>
+    <div id="quiz-popup">
+      <p id="quiz-feedback"></p>
+      <button id="unlock-button" class="hidden">Next Puzzle</button>
+      <button id="quiz-retry-button" class="hidden">Retry</button>
+    </div>
+  </div>
+
+  <!-- Pop-up for Puzzle -->
+  <div id="popup" class="hidden">
+    <p>Hurrayyy!! You solved the puzzle 🎉</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
